@@ -1090,6 +1090,7 @@ body{
 
 .social-row {
   display: flex;
+  flex-direction: column;
   gap: 22px;
   margin-top: 40px;
   font-family: var(--font-mono);

@@ -16,7 +16,7 @@ export const PROJECTS_DATA = [
     title: "AI-Powered 3D Portfolio Website",
     desc: "Built React.js 3D applications using AI-assisted development and a component-based architecture.",
     stack: ["Claude AI", "React JS", "Three JS"],
-    github: "",
+    github: "https://github.com/harish-m003/AI3DPortfolio",
     demo: "https://harishmportfolio.vercel.app/",
   },
   {
