@@ -13,11 +13,11 @@ export const PROJECTS_DATA = [
   {
     tag: "AI - Assited",
     year: "2026",
-    title: "Portfolio — AI assisted Personal Website",
-    desc: "Built React.js applications using AI-assisted development and a component-based architecture.",
+    title: "AI-Powered 3D Portfolio Website",
+    desc: "Built React.js 3D applications using AI-assisted development and a component-based architecture.",
     stack: ["Claude AI", "React JS", "Three JS"],
-    github: "https://github.com/",
-    demo: "#",
+    github: "",
+    demo: "https://harishmportfolio.vercel.app/",
   },
   {
     tag: "Landing Page",

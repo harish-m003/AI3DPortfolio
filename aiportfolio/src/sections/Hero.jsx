@@ -32,7 +32,12 @@ export function Hero({ ready, registerSection, onNav }) {
           <button ref={btn2} className="btn btn-outline" data-hover onClick={() => onNav("contact")}>
             <span>Say Hello</span>
           </button>
-          <a ref={btn3} className="btn btn-outline" data-hover href="resume.pdf" download>
+          <a
+            ref={btn3}
+            className="btn btn-outline"
+            data-hover
+            href="https://drive.google.com/uc?export=download&id=1D9Uo30Z8oDRww1ZDPUNzwb4ovYxx91jE"
+          >
             <span>Download Résumé ↓</span>
           </a>
         </div>
