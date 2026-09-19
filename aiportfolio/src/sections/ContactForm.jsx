@@ -1,47 +1,80 @@
 import React, { useState } from "react";
-import { useMagnetic } from "../hooks/useMagnetic";
+import { toast } from "react-toastify";
+import { connectsupabase } from "../components/supabase";
 
 export function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", msg: "" });
-  const [status, setStatus] = useState("");
-  const btnRef = useMagnetic();
+  const [form, setform] = useState({
+    Name: "",
+    Email: "",
+    Message: "",
+  });
 
-  const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
-
-  const onSubmit = (e) => {
+  const submitform = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.msg) {
-      setStatus("Please fill in every field.");
+
+    const { error } = await connectsupabase
+      .from("aiportfoliocontactform")
+      .insert([form]);
+
+    if (error) {
+      console.log(error);
+      toast.error("Message Not Sent");
       return;
     }
-    const mailto = `mailto:harishhmohann@gmail.com?subject=${encodeURIComponent(
-      "New project inquiry from " + form.name
-    )}&body=${encodeURIComponent(form.msg + "\n\n— " + form.name + " (" + form.email + ")")}`;
-    window.location.href = mailto;
-    setStatus("Opening your mail client…");
+
+    toast.success("Message Sent Successfully!");
+
+    setform({
+      Name: "",
+      Email: "",
+      Message: "",
+    });
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={submitform}>
       <div className="field">
-        <input type="text" placeholder=" " value={form.name} onChange={update("name")} required />
+        <input
+          type="text"
+          required
+          value={form.Name}
+          onChange={(e) =>
+            setform({ ...form, Name: e.target.value })
+          }
+        />
         <label>Your name</label>
         <span className="underline" />
       </div>
+
       <div className="field">
-        <input type="email" placeholder=" " value={form.email} onChange={update("email")} required />
+        <input
+          type="email"
+          required
+          value={form.Email}
+          onChange={(e) =>
+            setform({ ...form, Email: e.target.value })
+          }
+        />
         <label>Email address</label>
         <span className="underline" />
       </div>
+
       <div className="field">
-        <textarea rows={4} placeholder=" " value={form.msg} onChange={update("msg")} required />
+        <textarea
+          rows={4}
+          required
+          value={form.Message}
+          onChange={(e) =>
+            setform({ ...form, Message: e.target.value })
+          }
+        />
         <label>Message</label>
         <span className="underline" />
       </div>
-      <button ref={btnRef} type="submit" className="btn btn-solid" data-hover>
+
+      <button type="submit" className="btn btn-solid">
         <span>Send message</span>
       </button>
-      <div className="form-msg mono">{status}</div>
     </form>
   );
 }
