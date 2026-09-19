@@ -36,7 +36,7 @@ export function Hero({ ready, registerSection, onNav }) {
             ref={btn3}
             className="btn btn-outline"
             data-hover
-            href="https://drive.google.com/uc?export=download&id=1D9Uo30Z8oDRww1ZDPUNzwb4ovYxx91jE"
+            href="https://drive.google.com/file/d/1zVQ5b73xiuRxfJ9ICcRsM6rebOWnNaZL/view?usp=drive_link"
           >
             <span>Download Résumé ↓</span>
           </a>
