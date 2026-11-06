@@ -1,6 +1,7 @@
 import React from "react";
 import { useAmbientParallax } from "../hooks/useAmbientParallax";
 import { useMagnetic } from "../hooks/useMagnetic";
+import { Link } from "react-router-dom";
 
 export function Hero({ ready, registerSection, onNav }) {
   const parallaxRef = useAmbientParallax(7);
@@ -32,14 +33,14 @@ export function Hero({ ready, registerSection, onNav }) {
           <button ref={btn2} className="btn btn-outline" data-hover onClick={() => onNav("contact")}>
             <span>Say Hello</span>
           </button>
-          <a
+          <Link
             ref={btn3}
             className="btn btn-outline"
             data-hover
-            href="https://drive.google.com/file/d/1zVQ5b73xiuRxfJ9ICcRsM6rebOWnNaZL/view?usp=drive_link"
+            to="https://drive.google.com/file/d/1zVQ5b73xiuRxfJ9ICcRsM6rebOWnNaZL/view?usp=drive_link"
           >
             <span>Download Résumé ↓</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="scroll-cue">

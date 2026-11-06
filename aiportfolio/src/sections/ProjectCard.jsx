@@ -1,6 +1,7 @@
 import React from "react";
 import { Reveal } from "../components/Reveal";
 import { useTilt } from "../hooks/useTilt";
+import { Link } from "react-router-dom";
 
 export function ProjectCard({ project }) {
   const tiltRef = useTilt({ maxTiltX: 6, maxTiltY: 8, perspective: 900, lift: 3 });
@@ -20,14 +21,14 @@ export function ProjectCard({ project }) {
           ))}
         </div>
         <div className="p-links">
-          <a className="p-link" href={project.github} target="_blank" rel="noopener noreferrer" data-hover>
+          <Link className="p-link" to={project.github} target="_blank" rel="noopener noreferrer" data-hover>
             <span>GitHub</span>
             <span className="arrow">↗</span>
-          </a>
-          <a className="p-link" href={project.demo} target="_blank" rel="noopener noreferrer" data-hover>
+          </Link>
+          <Link className="p-link" to={project.demo} target="_blank" rel="noopener noreferrer" data-hover>
             <span>Live Demo</span>
             <span className="arrow">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </Reveal>

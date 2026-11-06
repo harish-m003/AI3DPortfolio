@@ -13,7 +13,7 @@ export function TopBar() {
         className="menu-btn mono"
         onClick={() => document.getElementById("mobileRail")?.scrollIntoView({ behavior: "smooth", block: "nearest" })}
       >
-        MENU
+      
       </button>
     </div>
   );

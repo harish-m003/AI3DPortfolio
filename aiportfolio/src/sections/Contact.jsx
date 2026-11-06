@@ -2,6 +2,7 @@ import React from "react";
 import { Reveal } from "../components/Reveal";
 import { useAmbientParallax } from "../hooks/useAmbientParallax";
 import { ContactForm } from "./ContactForm";
+import {Link} from "react-router-dom";
 
 
 export function Contact({ registerSection }) {
@@ -17,11 +18,10 @@ export function Contact({ registerSection }) {
           </Reveal>
           <Reveal as="div" className="social-row">
             
-            <a href="https://github.com/harish-m003" data-hover>GITHUB</a>
-            <a href="https://www.linkedin.com/in/harishm003/" data-hover>aEDIN</a>
-             <a href="https://www.instagram.com/" data-hover>INSTAGRAM</a>
-            <a href="tel:+916385355128" data-hover>+91 63853 55128</a>
-      
+            <Link to="https://github.com/harish-m003" data-hover>GITHUB</Link>
+            <Link to="https://www.linkedin.com/in/harishm003/" data-hover>LINKEDIN</Link>
+            <Link to="https://www.instagram.com/" data-hover>INSTAGRAM</Link>
+            <Link to="tel:+916385355128" data-hover>+91 63853 55128</Link>
           </Reveal>
         </div>
         <div>
